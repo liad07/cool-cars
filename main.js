@@ -1,6 +1,14 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex = 1;
+var rotation = 0;
+var click = 0;
 
+showSlides(slideIndex);
+window.addEventListener('load', (event) => {
+    rotation = 0;
+
+});
+
+//גלריה
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
@@ -10,9 +18,9 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
     if (n > slides.length) {
         slideIndex = 1
     }
@@ -28,6 +36,20 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+
+//סיבוב תמונה
+function rotateImg() {
+    click += 1;
+    rotation += 90;
+    if (rotation === 360) {
+        rotation = 0;
+    }
+    document.querySelector("#img").style.transform = `rotate(${rotation}deg)`;
+
+
+}
+
 //בדיקות מייל
 function contains_heb(str)
 {
@@ -39,10 +61,10 @@ function just_eng_letters()
     let email = document.getElementById("email").value;
     let flag=1;
     for(let character of email) {
-        if(contains_heb(character)||character==' '||character==',')
-        {
-            flag=0;
-        }
+         if(contains_heb(character)||character==' '||character==',')
+         {
+          flag=0;
+         }
     }
     if(!flag)
         alert("כתובת לא תכיל אותיות בעברית וסימנים אסורים אחרים )תו רווח, פסי")
@@ -51,7 +73,7 @@ function just_eng_letters()
 function is_shtrusdel_after_third()
 {
     let email = document.getElementById("email").value;
-    let index=0;
+   let index=0;
     for(let character of email)
     {
         if (character=='@')
@@ -135,11 +157,11 @@ function validMail(mail)
 }
 function check_size()
 {
-    var email = document.getElementById("email").value;
+var email = document.getElementById("email").value;
 
-    if (email.length<6)
-    {
-        alert("מייל לא יכול להזין פחות מ6 תווים")
+if (email.length<6)
+{
+alert("מייל לא יכול להזין פחות מ6 תווים")
     }
 }
 //בדיקה האם סומן מין מסוים
@@ -151,19 +173,20 @@ function fillgender() {
 }
 //בדיקה אם נבחר תאריך
 function havedate(){
-    var date=document.getElementById('date').value;
-    if (date==""){
-        alert("לא נבחר תאריך")
-    }
+var date=document.getElementById('date').value;
+if (date==""){
+    alert("לא נבחר תאריך")
 }
+}
+//מראה סיסמא
 function showpass() {
-    var x = document.getElementById("password2");
-    if (x.type === "password") {
-        x.type = "text";
-    } else {
-        x.type = "password";
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
     }
-}
 
 function is_valid()
 {
@@ -174,5 +197,6 @@ function is_valid()
     exact1_dot();
     not_first_0r_last_dot();
     just_eng_letters();
+    fillgender();
     havedate();
 }

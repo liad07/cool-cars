@@ -1,121 +1,72 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <title>cool cars|רישום</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="icon" href="images/logo.png">
+
 </head>
-<body dir="rtl" class="b2">
-<img src="images\logo.png" width="150" height="100">
-<br>
-<div>
-    <h1> דף ההרשמה לאתר </h1>
-    <i><p class="r1"> CC"C(cool cars community)<br>
+<body>
 
+<div class="center">
+    <div class="topnav">
+        <a href="Home.html">בית</a>
+        <a class="active" href="Registration.html">רישום</a>
+        <a href="CreateContentItem.html">יצירת תוכן</a>
+        <a href="SharedContent.html">שיתוף תוכן</a>
+        <a href="gallery.html">גלרייה</a>
+        <a href="About.html">אודות</a>
+    </div>
+    <h1>דף הרשמה</h1>
+    <form>
 
-    </p></i>
-    <br>
-    <br>
-    <br>
-    <table class="t3">
-        <tr>
+        <input type="text" name="fname" size="8">
+        <b>:שם פרטי</b><br>
 
-
-            <th class="th1">
-
-                <a href="Home.html">דף הבית</a>
-
-
-            </th>
-            <th>
-                |||
-            </th>
-            <th class="th2">
-
-                <a href="Registration.html">דף הרשמה</a>
-
-
-            </th>
-            <th>
-                |||
-            </th>
-            <th class="th3">
-
-                <a href="CreateContentItem.html">העלאת רכבים למכירה</a>
-
-
-            </th>
-            <th>
-                |||
-            </th>
-            <th class="th4">
-
-                <a href="SharedContent.html">רכבים מועלים למכירה</a>
-
-
-            </th>
-            <th>
-                |||
-            </th>
-            <th class="th5">
-
-                <a href="gallery.html">גלרייה</a>
-
-
-            </th>
-            <th>
-                |||
-            </th>
-            <th class="th6">
-
-                <a href="About.html">אודות</a>
-
-
-            </th>
-
-
-        </tr>
-    </table>
-    <center>    <form>
-        </br>
-
-    <b>first name:</b>
-        <input type="text" id="fname" size="8"><br>
     </br>
-        <b>last name:</b>
-        <input type="text" id="lname" size="8"><br>
-    </br>
-        <b>username:</b>
-        <input type="text"  placeholder="user" id="username2">
-        </br>
-        <b>password:</b>
-        <input type="password" id="password2" size="20"><br>
-    </br>
-        <b>email address:</b>
-        <input type="email" placeholder="example@gmail.com" id="email">
 
+        <input type="text" name="lname" size="8"><b>:שם משפחה</b><br>
+    </br>
+
+        <input type="text" name="user" size="8"><b>:שם משתמש</b><br>
+    </br>
+        <input type="email" id="email" placeholder="example@gmail.com"><b>:כתובת מייל</b>
         <br>
         </br>
-        <b>Date of birth:</b>
-        <input type="datetime-local" id="date"
-               name="meeting-time" value="2000-00-00T00:0"
-               min="2000-00-00T00:00" max="2122-06-14T00:00"><br>
-    </br>
-        <b>gender:</b><br>
-        <input type="radio" name="gender" value="male">male<br>
-        <input type="radio" name="gender" value="female">female<br>
 
+        <input type="password" id="password"><b>:סיסמא</b><br>
+    </br>
+
+
+        <input type="datetime-local" id="date"><b>:תאריך לידה</b><br>
+    </br>
+        <b>:מין</b><br>
+        <input type="radio" name="gender" value="male">בן<br>
+        <input type="radio" name="gender" value="female">בת<br>
+
+        <br></br>
+        <b>:איזור</b>
+        <br></br>
 
         <select name="area">
             <option value="north"> צפון
             <option value="west"> דרום
             <option value="center"> מרכז
-            <option value="outofisrael">חו"ל
+            <option value="outofIL">מחוץ לארץ הקודש
         </select><br>
-        <input type="submit" onclick="is_valid()">
-</form>
-    </center>
+    </br>
+        <div class="center">
+            <input type="submit" onclick="is_valid()">
 
-    <script src="main.js"></script>
+            <input type="reset">
+        </div>
 
+    </form>
 </div>
+<script src="main.js"></script>
+
 </body>
 </html>
